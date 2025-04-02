@@ -4,6 +4,7 @@ import { Table, Order, calculateTotal } from "../map-data"
 import { cn } from "@/lib/utils"
 import {
   DrawerContent,
+  DrawerClose,
   DrawerDescription,
   DrawerFooter,
   DrawerHeader,
@@ -13,7 +14,6 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
-import { DrawerClose } from "@radix-ui/react-dialog"
 
 interface TableDetailsProps {
   table: Table
