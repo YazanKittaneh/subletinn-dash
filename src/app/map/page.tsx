@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { Room, rooms } from "./map-data"
-import { StatusBadges, RestaurantLayout, TableCard, TableDetails } from "./map-components"
+import { StatusBadges, RestaurantLayout, RoomCard, RoomDetails } from "./map-components"
 import { Drawer, DrawerTrigger } from "@/components/ui/drawer"
 
 export default function MapPOS() {
@@ -30,14 +30,8 @@ export default function MapPOS() {
               onOpenChange={setIsDrawerOpen}
             >
               <DrawerTrigger asChild>
-                <TableCard 
-                  table={{
-                    id: room.roomNumber,
-                    number: room.roomNumber,
-                    seats: 0,
-                    status: room.status,
-                    timeOccupied: room.occupant || undefined
-                  }} 
+                <RoomCard 
+                  room={room}
                   onClick={() => handleRoomClick(room)} 
                 />
               </DrawerTrigger>

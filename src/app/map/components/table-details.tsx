@@ -1,6 +1,6 @@
 "use client"
 
-import { Table, Order, calculateTotal } from "../map-data"
+import { Room } from "../map-data"
 import { cn } from "@/lib/utils"
 import {
   DrawerContent,
@@ -15,19 +15,19 @@ import { Badge } from "@/components/ui/badge"
 import { Card } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
 
-interface TableDetailsProps {
-  table: Table
+interface RoomDetailsProps {
+  room: Room
   onClose: () => void
 }
 
-export function TableDetails({ table, onClose }: TableDetailsProps) {
+export function RoomDetails({ room, onClose }: RoomDetailsProps) {
   return (
     <DrawerContent className="dark:bg-gray-900">
       <div className="mx-auto w-full max-w-sm">
         <DrawerHeader>
-          <DrawerTitle className="dark:text-white">Table {table.number}</DrawerTitle>
+          <DrawerTitle className="dark:text-white">Room {room.roomNumber}</DrawerTitle>
           <DrawerDescription>
-            {table.seats} seats • Status:{" "}
+            {room.roomName} • Status:{" "}
             <Badge
               variant="outline"
               className={cn(

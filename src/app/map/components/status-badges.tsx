@@ -14,17 +14,13 @@ export function StatusBadges({ className }: StatusBadgesProps) {
         <div className="w-3 h-3 rounded-full bg-emerald-500"></div>
         Available
       </Badge>
-      <Badge variant="outline" className="flex items-center gap-2 px-3 py-1">
+      <Badge variant="outline" className="flex items-center gap-2 px-3 py-1 dark:bg-gray-800 dark:text-gray-200">
         <div className="w-3 h-3 rounded-full bg-rose-500"></div>
         Occupied
       </Badge>
-      <Badge variant="outline" className="flex items-center gap-2 px-3 py-1">
-        <div className="w-3 h-3 rounded-full bg-sky-500"></div>
-        Reserved
-      </Badge>
-      <Badge variant="outline" className="flex items-center gap-2 px-3 py-1">
+      <Badge variant="outline" className="flex items-center gap-2 px-3 py-1 dark:bg-gray-800 dark:text-gray-200">
         <div className="w-3 h-3 rounded-full bg-amber-500"></div>
-        Cleaning
+        Maintenance
       </Badge>
     </div>
   )
