@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { tables } from "./map-data"
+import { Table, tables } from "./map-data"
 import { StatusBadges, RestaurantLayout, TableCard, TableDetails } from "./map-components"
 import { Drawer, DrawerTrigger } from "@/components/ui/drawer"
 
