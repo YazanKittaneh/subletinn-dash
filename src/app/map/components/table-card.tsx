@@ -18,7 +18,7 @@ export function TableCard({ table, onClick }: TableCardProps) {
         "hover:scale-105 hover:shadow-lg",
         "flex flex-col items-center justify-center",
         table.seats <= 2 ? "rounded-full aspect-square" : "rounded-lg aspect-[4/3]",
-        "bg-white shadow-md border border-gray-200",
+        "bg-white dark:bg-gray-800 shadow-md border border-gray-200 dark:border-gray-700",
         "p-4",
       )}
       onClick={onClick}
@@ -29,8 +29,8 @@ export function TableCard({ table, onClick }: TableCardProps) {
           getStatusColor(table.status),
         )}
       ></div>
-      <div className="text-lg font-bold">Table {table.number}</div>
-      <div className="flex items-center text-sm text-gray-600">
+      <div className="text-lg font-bold dark:text-white">Table {table.number}</div>
+      <div className="flex items-center text-sm text-gray-600 dark:text-gray-400">
         <Users className="h-4 w-4 mr-1" />
         {table.seats}
       </div>

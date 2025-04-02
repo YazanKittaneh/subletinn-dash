@@ -10,7 +10,7 @@ interface StatusBadgesProps {
 export function StatusBadges({ className }: StatusBadgesProps) {
   return (
     <div className={cn("flex mb-6 gap-4 flex-wrap", className)}>
-      <Badge variant="outline" className="flex items-center gap-2 px-3 py-1">
+      <Badge variant="outline" className="flex items-center gap-2 px-3 py-1 dark:bg-gray-800 dark:text-gray-200">
         <div className="w-3 h-3 rounded-full bg-emerald-500"></div>
         Available
       </Badge>

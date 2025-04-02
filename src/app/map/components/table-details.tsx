@@ -22,10 +22,10 @@ interface TableDetailsProps {
 
 export function TableDetails({ table, onClose }: TableDetailsProps) {
   return (
-    <DrawerContent>
+    <DrawerContent className="dark:bg-gray-900">
       <div className="mx-auto w-full max-w-sm">
         <DrawerHeader>
-          <DrawerTitle>Table {table.number}</DrawerTitle>
+          <DrawerTitle className="dark:text-white">Table {table.number}</DrawerTitle>
           <DrawerDescription>
             {table.seats} seats • Status:{" "}
             <Badge
@@ -57,10 +57,10 @@ export function TableDetails({ table, onClose }: TableDetailsProps) {
               {table.orders && table.orders.length > 0 ? (
                 <div className="space-y-2">
                   {table.orders.map((order) => (
-                    <Card key={order.id} className="p-3">
+                    <Card key={order.id} className="p-3 dark:bg-gray-800">
                       <div className="flex justify-between">
-                        <span>{order.item}</span>
-                        <span>${order.price.toFixed(2)}</span>
+                        <span className="dark:text-white">{order.item}</span>
+                        <span className="dark:text-white">${order.price.toFixed(2)}</span>
                       </div>
                       <div className="text-xs text-gray-500">Status: {order.status}</div>
                     </Card>

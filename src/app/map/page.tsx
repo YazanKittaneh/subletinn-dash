@@ -16,8 +16,8 @@ export default function MapPOS() {
 
   return (
     <div className="container mx-auto py-8">
-      <h1 className="text-3xl font-bold mb-2">Restaurant Floor Plan</h1>
-      <p className="text-gray-500 mb-8">Interactive table management system</p>
+      <h1 className="text-3xl font-bold mb-2 dark:text-white">Restaurant Floor Plan</h1>
+      <p className="text-gray-500 dark:text-gray-400 mb-8">Interactive table management system</p>
 
       <StatusBadges />
 

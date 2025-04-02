@@ -6,7 +6,7 @@ interface RestaurantLayoutProps {
 
 export function RestaurantLayout({ children }: RestaurantLayoutProps) {
   return (
-    <div className="relative border-2 border-gray-200 rounded-xl p-8 bg-gradient-to-br from-gray-50 to-gray-100 mb-8 shadow-sm">
+    <div className="relative border-2 border-gray-200 dark:border-gray-700 rounded-xl p-8 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 mb-8 shadow-sm">
       <div className="relative">
         {/* Walls and sections */}
         <div className="absolute top-0 left-0 w-1/3 h-2 bg-gray-300 rounded-full"></div>
@@ -17,8 +17,8 @@ export function RestaurantLayout({ children }: RestaurantLayoutProps) {
         {/* Restaurant features */}
         <div className="absolute top-4 left-4 w-28 h-16 border border-gray-300 rounded-lg bg-white/80 backdrop-blur-sm flex items-center justify-center text-sm font-medium shadow-sm">
           <div className="flex flex-col items-center">
-            <span className="text-xs text-gray-500">Main</span>
-            <span>Entrance</span>
+            <span className="text-xs text-gray-500 dark:text-gray-400">Main</span>
+            <span className="dark:text-white">Entrance</span>
           </div>
         </div>
 
