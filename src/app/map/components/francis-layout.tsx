@@ -1,15 +1,49 @@
 "use client"
 
-interface FrancisLayoutProps {
-  children: React.ReactNode
-  floor: number
+interface LayoutItem {
+  x: string // e.g. "top-4 left-4"
+  y?: string // alternative to x for more control
+  width: string // e.g. "w-32"
+  height: string // e.g. "h-24"
+  label: string
+  sublabel?: string
+  className?: string
 }
 
+interface FrancisLayoutProps {
+  children?: React.ReactNode
+  floor: number
+  items?: LayoutItem[]
+  containerClassName?: string
+}
 
-export function FrancisLayout({ children, floor }: FrancisLayoutProps) {
+export function FrancisLayout({ 
+  children, 
+  floor, 
+  items = [],
+  containerClassName = "" 
+}: FrancisLayoutProps) {
   return (
-    <div className="relative border-2 border-gray-200 dark:border-gray-700 rounded-xl p-8 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 mb-8 shadow-sm">
-      <div className="relative">
+    <div className={`relative border-2 border-gray-200 dark:border-gray-700 rounded-xl p-8 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 mb-8 shadow-sm ${containerClassName}`}>
+      <div className="relative h-full w-full">
+        {/* Custom items */}
+        {items.map((item, index) => (
+          <div
+            key={index}
+            className={`absolute ${item.x || ''} ${item.y || ''} ${item.width} ${item.height} border border-gray-300 rounded-lg bg-white/80 backdrop-blur-sm flex items-center justify-center text-sm font-medium shadow-sm ${item.className || ''}`}
+          >
+            <div className="flex flex-col items-center">
+              {item.sublabel && (
+                <span className="text-xs text-gray-500 dark:text-gray-400">
+                  {item.sublabel}
+                </span>
+              )}
+              <span className={item.sublabel ? '' : 'dark:text-white'}>
+                {item.label}
+              </span>
+            </div>
+          </div>
+        ))}
         {floor === 0 ? (
           // Basement layout
           <>
