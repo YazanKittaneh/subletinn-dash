@@ -38,10 +38,9 @@ export const francis0: Room[] = [
     status: 'available',
     moveIn: 'September',
     position: {
-      x: 'left-32',
-      y: 'top-12',
-      width: 'w-28',
-      height: 'h-20'
+      row: 1,
+      col: 2,
+      className: 'bg-green-50'
     }
   },
   {
@@ -51,10 +50,8 @@ export const francis0: Room[] = [
     status: 'occupied',
     moveIn: 'January',
     position: {
-      x: 'left-56',
-      y: 'top-12',
-      width: 'w-28',
-      height: 'h-20'
+      row: 1,
+      col: 3
     }
   },
   {
@@ -64,10 +61,8 @@ export const francis0: Room[] = [
     status: 'occupied',
     moveIn: 'July',
     position: {
-      x: 'left-80',
-      y: 'top-12',
-      width: 'w-28',
-      height: 'h-20'
+      row: 1,
+      col: 4
     }
   },
 ];
