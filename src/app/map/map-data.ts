@@ -1,5 +1,12 @@
 export type RoomStatus = "available" | "occupied" | "maintenance"
 
+export interface RoomPosition {
+  x: string  // Tailwind position class e.g. "left-4"
+  y: string  // Tailwind position class e.g. "top-4"
+  width?: string  // Tailwind width class e.g. "w-32"
+  height?: string // Tailwind height class e.g. "h-24"
+}
+
 export interface Room {
   roomNumber: number
   roomName: string
@@ -8,6 +15,7 @@ export interface Room {
   lastCleaned?: string
   notes?: string
   moveIn: string
+  position: RoomPosition
 }
 
 
@@ -18,6 +26,12 @@ export const francis0: Room[] = [
     occupant: 'Juan San',
     status: 'occupied',
     moveIn: 'April',
+    position: {
+      x: 'left-8',
+      y: 'top-12',
+      width: 'w-28',
+      height: 'h-20'
+    }
   },
   {
     roomNumber: 15,
@@ -25,6 +39,12 @@ export const francis0: Room[] = [
     occupant: '',
     status: 'available',
     moveIn: 'September',
+    position: {
+      x: 'left-32',
+      y: 'top-12',
+      width: 'w-28',
+      height: 'h-20'
+    }
   },
   {
     roomNumber: 14,
@@ -32,6 +52,12 @@ export const francis0: Room[] = [
     occupant: 'FERRAN',
     status: 'occupied',
     moveIn: 'January',
+    position: {
+      x: 'left-56',
+      y: 'top-12',
+      width: 'w-28',
+      height: 'h-20'
+    }
   },
   {
     roomNumber: 13,
@@ -39,6 +65,12 @@ export const francis0: Room[] = [
     occupant: 'Henry Me',
     status: 'occupied',
     moveIn: 'July',
+    position: {
+      x: 'left-80',
+      y: 'top-12',
+      width: 'w-28',
+      height: 'h-20'
+    }
   },
 ];
 
@@ -48,32 +80,55 @@ export const francis1: Room[] = [
     roomName: "Michigan",
     occupant: "Lu Wang",
     status: "occupied",
-    moveIn: "March"
+    moveIn: "March",
+    position: {
+      x: 'left-8',
+      y: 'top-8',
+      width: 'w-32',
+      height: 'h-24'
+    }
   },
   {
     roomNumber: 10,
     roomName: "Cortez",
     occupant: "Kyriakos",
     status: "occupied",
-    moveIn: "November"
+    moveIn: "November",
+    position: {
+      x: 'right-8',
+      y: 'top-8',
+      width: 'w-32',
+      height: 'h-24'
+    }
   },
 ]
 
-  export const francis2: Room[] = [
-
+export const francis2: Room[] = [
   {
     roomNumber: 9,
     roomName: "Grand",
     occupant: "",
     status: "available",
-    moveIn: "June"
+    moveIn: "June",
+    position: {
+      x: 'left-8',
+      y: 'top-8',
+      width: 'w-32',
+      height: 'h-24'
+    }
   },
   {
     roomNumber: 8,
     roomName: "Chicago",
     occupant: "Val (Rob)",
     status: "occupied",
-    moveIn: "August"
+    moveIn: "August",
+    position: {
+      x: 'left-48',
+      y: 'top-8',
+      width: 'w-32',
+      height: 'h-24'
+    }
   },
   {
     roomNumber: 7,
