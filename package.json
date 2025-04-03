@@ -76,5 +76,6 @@
     "typescript": "^5",
     "vitest": "^3.0.9"
   },
+  "packageManager": "^bun@1.2.8",
   "author": "yazan kittaneh"
 }

@@ -1,4 +1,4 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   images: {
@@ -12,13 +12,13 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  serverExternalPackages: [],
   experimental: {
     // Turbopack configuration (enabled by default in dev script)
     turbo: {
       // Any custom Turbopack configuration would go here
     },
     // Server components features
-    serverComponentsExternalPackages: [],
     // Other experimental features you might want to enable
     // mdxRs: true,
   },
