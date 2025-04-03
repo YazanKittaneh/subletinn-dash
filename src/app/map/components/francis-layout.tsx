@@ -21,7 +21,6 @@ export function FrancisLayout({ children, floor }: FrancisLayoutProps) {
             <div className="absolute top-4 left-4 w-28 h-16 border border-gray-300 rounded-lg bg-white/80 backdrop-blur-sm flex items-center justify-center text-sm font-medium shadow-sm">
               <div className="flex flex-col items-center">
                 <span className="text-xs text-gray-500 dark:text-gray-400">Stairs</span>
-                <span className="dark:text-white">Entrance</span>
               </div>
             </div>
 
@@ -38,13 +37,17 @@ export function FrancisLayout({ children, floor }: FrancisLayoutProps) {
                 <span>Bar</span>
               </div>
             </div>
+            <div className="flex flex-col items-center">
+                <span className="text-xs text-gray-500">Drinks</span>
+                {children}
+              </div>
           </>
         ) : floor === 1 ? (
           // First floor layout
           <>
             <div className="absolute top-0 left-0 w-full h-2 bg-gray-300 rounded-full"></div>
             <div className="absolute top-0 left-0 w-2 h-full bg-gray-300 rounded-full"></div>
-            
+
             <div className="absolute top-4 left-4 w-32 h-24 border border-gray-300 rounded-lg bg-white/80 backdrop-blur-sm flex items-center justify-center text-sm font-medium shadow-sm">
               <div className="flex flex-col items-center">
                 <span className="text-xs text-gray-500">Meeting</span>
@@ -58,6 +61,28 @@ export function FrancisLayout({ children, floor }: FrancisLayoutProps) {
                 <span>Room B</span>
               </div>
             </div>
+            {children}
+          </>
+        ) : floor === 2 ? (
+          // First floor layout
+          <>
+            <div className="absolute top-0 left-0 w-full h-2 bg-gray-300 rounded-full"></div>
+            <div className="absolute top-0 left-0 w-2 h-full bg-gray-300 rounded-full"></div>
+
+            <div className="absolute top-4 left-4 w-32 h-24 border border-gray-300 rounded-lg bg-white/80 backdrop-blur-sm flex items-center justify-center text-sm font-medium shadow-sm">
+              <div className="flex flex-col items-center">
+                <span className="text-xs text-gray-500">Meeting</span>
+                <span>Room A</span>
+              </div>
+            </div>
+
+            <div className="absolute top-4 right-4 w-32 h-24 border border-gray-300 rounded-lg bg-white/80 backdrop-blur-sm flex items-center justify-center text-sm font-medium shadow-sm">
+              <div className="flex flex-col items-center">
+                <span className="text-xs text-gray-500">Meeting</span>
+                <span>Room B</span>
+              </div>
+            </div>
+            {children}
           </>
         ) : (
           // Default/other floors layout
@@ -69,16 +94,6 @@ export function FrancisLayout({ children, floor }: FrancisLayoutProps) {
         )}
 
         {/* Common decorative elements */}
-        <div
-          className="absolute top-1/4 left-8 w-6 h-6 rounded-full bg-green-100 border border-green-200"
-          title="Plant"
-        ></div>
-        <div
-          className="absolute bottom-1/4 right-8 w-6 h-6 rounded-full bg-green-100 border border-green-200"
-          title="Plant"
-        ></div>
-
-        {children}
       </div>
     </div>
   )
