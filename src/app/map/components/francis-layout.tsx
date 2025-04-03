@@ -25,12 +25,19 @@ export function FrancisLayout({
 }: FrancisLayoutProps) {
   return (
     <div className={`relative border-2 border-gray-200 dark:border-gray-700 rounded-xl p-8 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 mb-8 shadow-sm ${containerClassName}`}>
-      <div className="relative h-full w-full">
-        {/* Custom items */}
+      <div className="grid grid-rows-2 grid-cols-8 gap-4 h-full w-full">
         {items.map((item, index) => (
           <div
             key={index}
-            className={`absolute ${item.x || ''} ${item.y || ''} ${item.width} ${item.height} border border-gray-300 rounded-lg bg-white/80 backdrop-blur-sm flex items-center justify-center text-sm font-medium shadow-sm ${item.className || ''}`}
+            className={`
+              row-start-${item.row}
+              col-start-${item.col}
+              border border-gray-300 rounded-lg 
+              bg-white/80 backdrop-blur-sm 
+              flex items-center justify-center 
+              text-sm font-medium shadow-sm 
+              ${item.className || ''}
+            `}
           >
             <div className="flex flex-col items-center">
               {item.sublabel && (

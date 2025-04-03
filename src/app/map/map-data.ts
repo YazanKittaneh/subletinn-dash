@@ -1,10 +1,9 @@
 export type RoomStatus = "available" | "occupied" | "maintenance"
 
 export interface RoomPosition {
-  x: string  // Tailwind position class e.g. "left-4"
-  y: string  // Tailwind position class e.g. "top-4"
-  width?: string  // Tailwind width class e.g. "w-32"
-  height?: string // Tailwind height class e.g. "h-24"
+  row: number  // 1-2
+  col: number  // 1-8
+  className?: string // Additional styling
 }
 
 export interface Room {
@@ -27,10 +26,9 @@ export const francis0: Room[] = [
     status: 'occupied',
     moveIn: 'April',
     position: {
-      x: 'left-8',
-      y: 'top-12',
-      width: 'w-28',
-      height: 'h-20'
+      row: 1,
+      col: 1,
+      className: 'bg-blue-50'
     }
   },
   {
