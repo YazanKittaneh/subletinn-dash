@@ -1,7 +1,7 @@
-"use client"
+'use client';
 
-import { Room } from "../map-data"
-import { cn } from "@/lib/utils"
+import { Room } from '../map-data';
+import { cn } from '@/lib/utils';
 import {
   DrawerContent,
   DrawerClose,
@@ -9,15 +9,13 @@ import {
   DrawerFooter,
   DrawerHeader,
   DrawerTitle,
-} from "@/components/ui/drawer"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Card } from "@/components/ui/card"
-import { Separator } from "@/components/ui/separator"
+} from '@/components/ui/drawer';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 
 interface RoomDetailsProps {
-  room: Room
-  onClose: () => void
+  room: Room;
+  onClose: () => void;
 }
 
 export function RoomDetails({ room, onClose }: RoomDetailsProps) {
@@ -25,38 +23,41 @@ export function RoomDetails({ room, onClose }: RoomDetailsProps) {
     <DrawerContent className="dark:bg-gray-900">
       <div className="mx-auto w-full max-w-sm">
         <DrawerHeader>
-          <DrawerTitle className="dark:text-white">Room {room.roomNumber}</DrawerTitle>
+          <DrawerTitle className="dark:text-white">
+            Room {room.roomNumber}
+          </DrawerTitle>
           <DrawerDescription>
-            {room.roomName} • Status:{" "}
+            {room.roomName} • Status:{' '}
             <Badge
               variant="outline"
               className={cn(
-                "ml-1",
-                table.status === "available"
-                  ? "text-green-600"
-                  : table.status === "occupied"
-                    ? "text-red-600"
-                    : table.status === "reserved"
-                      ? "text-blue-600"
-                      : "text-yellow-600",
+                'ml-1',
+                room.status === 'available'
+                  ? 'text-green-600'
+                  : room.status === 'occupied'
+                    ? 'text-red-600'
+                    : room.status === 'maintenance'
+                      ? 'text-blue-600'
+                      : 'text-yellow-600'
               )}
             >
-              {table.status}
+              {room.status}
             </Badge>
           </DrawerDescription>
         </DrawerHeader>
         <div className="p-4">
-          {table.status === "occupied" && (
+          {room.status === 'occupied' && (
             <>
               <div className="mb-4">
-                <p className="text-sm text-gray-500">Occupied since: {table.timeOccupied}</p>
-                <p className="text-sm text-gray-500">Server: {table.server}</p>
+                <p className="text-sm text-gray-500">
+                  Occupied since: {room.moveIn}
+                </p>
               </div>
 
               <h3 className="font-medium mb-2">Orders</h3>
-              {table.orders && table.orders.length > 0 ? (
+              {/* {room.orders && room.orders.length > 0 ? (
                 <div className="space-y-2">
-                  {table.orders.map((order) => (
+                  {room.orders.map((order) => (
                     <Card key={order.id} className="p-3 dark:bg-gray-800">
                       <div className="flex justify-between">
                         <span className="dark:text-white">{order.item}</span>
@@ -68,37 +69,41 @@ export function RoomDetails({ room, onClose }: RoomDetailsProps) {
                   <Separator className="my-2" />
                   <div className="flex justify-between font-medium">
                     <span>Total</span>
-                    <span>${calculateTotal(table.orders)}</span>
+                    <span>${calculateTotal(room.orders)}</span>
                   </div>
                 </div>
               ) : (
                 <p className="text-sm text-gray-500">No orders yet</p>
-              )}
+              )} */}
             </>
           )}
 
-          {table.status === "available" && (
-            <p className="text-sm text-gray-500">This table is ready to be seated.</p>
+          {room.status === 'available' && (
+            <p className="text-sm text-gray-500">
+              This room is ready to be seated.
+            </p>
           )}
 
-          {table.status === "reserved" && (
-            <p className="text-sm text-gray-500">This table has been reserved.</p>
+          {room.status === 'occupied' && (
+            <p className="text-sm text-gray-500">
+              This room has been reserved.
+            </p>
           )}
 
-          {table.status === "cleaning" && (
-            <p className="text-sm text-gray-500">This table is being cleaned.</p>
+          {room.status === 'maintenance' && (
+            <p className="text-sm text-gray-500">This room is being cleaned.</p>
           )}
         </div>
         <DrawerFooter>
-          {table.status === "available" && <Button>Seat Guests</Button>}
-          {table.status === "occupied" && (
+          {room.status === 'available' && <Button>Seat Guests</Button>}
+          {room.status === 'occupied' && (
             <>
               <Button>Add Order</Button>
               <Button variant="outline">Print Bill</Button>
             </>
           )}
-          {table.status === "reserved" && <Button>Check In</Button>}
-          {table.status === "cleaning" && <Button>Mark as Available</Button>}
+          {room.status === 'occupied' && <Button>Check In</Button>}
+          {room.status === 'maintenance' && <Button>Mark as Available</Button>}
           <DrawerClose asChild>
             <Button variant="outline" onClick={onClose}>
               Close
@@ -107,5 +112,5 @@ export function RoomDetails({ room, onClose }: RoomDetailsProps) {
         </DrawerFooter>
       </div>
     </DrawerContent>
-  )
+  );
 }

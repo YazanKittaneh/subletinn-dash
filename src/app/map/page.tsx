@@ -1,23 +1,32 @@
-"use client"
+'use client';
 
-import { useState } from "react"
-import { Room, rooms } from "./map-data"
-import { StatusBadges, RestaurantLayout, RoomCard, RoomDetails } from "./map-components"
-import { Drawer, DrawerTrigger } from "@/components/ui/drawer"
+import { useState } from 'react';
+import { Room, rooms } from './map-data';
+import {
+  StatusBadges,
+  RestaurantLayout,
+  RoomCard,
+  RoomDetails,
+} from './map-components';
+import { Drawer, DrawerTrigger } from '@/components/ui/drawer';
 
 export default function MapPOS() {
-  const [selectedRoom, setSelectedRoom] = useState<Room | null>(null)
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false)
+  const [selectedRoom, setSelectedRoom] = useState<Room | null>(null);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const handleRoomClick = (room: Room) => {
-    setSelectedRoom(room)
-    setIsDrawerOpen(true)
-  }
+    setSelectedRoom(room);
+    setIsDrawerOpen(true);
+  };
 
   return (
     <div className="container mx-auto py-8">
-      <h1 className="text-3xl font-bold mb-2 dark:text-white">Room Management</h1>
-      <p className="text-gray-500 dark:text-gray-400 mb-8">Interactive room status system</p>
+      <h1 className="text-3xl font-bold mb-2 dark:text-white">
+        Room Management
+      </h1>
+      <p className="text-gray-500 dark:text-gray-400 mb-8">
+        Interactive room status system
+      </p>
 
       <StatusBadges />
 
@@ -26,25 +35,26 @@ export default function MapPOS() {
           {rooms.map((room) => (
             <Drawer
               key={room.roomNumber}
-              open={selectedRoom?.roomNumber === room.roomNumber && isDrawerOpen}
+              open={
+                selectedRoom?.roomNumber === room.roomNumber && isDrawerOpen
+              }
               onOpenChange={setIsDrawerOpen}
             >
               <DrawerTrigger asChild>
-                <RoomCard 
-                  room={room}
-                  onClick={() => handleRoomClick(room)} 
-                />
+                <RoomCard room={room} onClick={() => handleRoomClick(room)} />
               </DrawerTrigger>
               {selectedRoom && (
-                <TableDetails 
-                  table={{
-                    id: selectedRoom.roomNumber,
-                    number: selectedRoom.roomNumber,
-                    seats: 0,
+                <RoomDetails
+                  room={{
+                    roomNumber: selectedRoom.roomNumber,
+                    roomName: selectedRoom.roomName,
+                    occupant: selectedRoom.occupant,
                     status: selectedRoom.status,
-                    timeOccupied: selectedRoom.occupant || undefined
+                    moveIn: selectedRoom.moveIn,
+                    lastCleaned: selectedRoom.lastCleaned || undefined,
+                    notes: selectedRoom.notes || undefined,
                   }}
-                  onClose={() => setIsDrawerOpen(false)} 
+                  onClose={() => setIsDrawerOpen(false)}
                 />
               )}
             </Drawer>
@@ -52,6 +62,5 @@ export default function MapPOS() {
         </div>
       </RestaurantLayout>
     </div>
-  )
+  );
 }
-
