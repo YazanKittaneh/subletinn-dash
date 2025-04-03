@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Room, francis0, francis1, francis2 } from './map-data';
+import { Room, francis0, francis1 } from './map-data';
 import {
   StatusBadges,
   RestaurantLayout,
@@ -9,7 +9,7 @@ import {
   RoomDetails,
 } from './map-components';
 import { Drawer, DrawerTrigger } from '@/components/ui/drawer';
-import { FrancisLayout } from './components/francis-layout';
+import GridLayout from './components/grid-layout';
 
 export default function MapPOS() {
   const [selectedRoom, setSelectedRoom] = useState<Room | null>(null);
@@ -20,7 +20,7 @@ export default function MapPOS() {
     setIsDrawerOpen(true);
   };
 
-  const floors = [francis0, francis1, francis2]
+  const floors = [francis0, francis1]
 
   return (
     <div className="container mx-auto py-8">
@@ -32,42 +32,18 @@ export default function MapPOS() {
       </p>
 
       <StatusBadges />
+      <div>
+        <RestaurantLayout>
 
-      {floors.map((floor, index) => (
-        <FrancisLayout floor={index}>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 py-12 px-4">
-            {floor.map((room) => (
-              <Drawer
-                key={room.roomNumber}
-                open={
-                  selectedRoom?.roomNumber === room.roomNumber && isDrawerOpen
-                }
-                onOpenChange={setIsDrawerOpen}
-              >
-                <DrawerTrigger asChild>
-                  <RoomCard room={room} onClick={() => handleRoomClick(room)} />
-                </DrawerTrigger>
-                {selectedRoom && (
-                  <RoomDetails
-                    room={{
-                      position: selectedRoom.position,
-                      roomNumber: selectedRoom.roomNumber,
-                      roomName: selectedRoom.roomName,
-                      occupant: selectedRoom.occupant,
-                      status: selectedRoom.status,
-                      moveIn: selectedRoom.moveIn,
-                      lastCleaned: selectedRoom.lastCleaned || undefined,
-                      notes: selectedRoom.notes || undefined,
-                    }}
-                    onClose={() => setIsDrawerOpen(false)}
-                  />
-                )}
-              </Drawer>
-            ))}
-          </div>
-        </FrancisLayout>
-      ))
-      }
+          {floors.map((floor, index) => (
+            <GridLayout key={index} rooms={floor}>
+            </GridLayout>
+          ))
+
+          }
+        </RestaurantLayout>
+
+      </div>
     </div>
   );
 }

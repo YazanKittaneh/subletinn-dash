@@ -26,11 +26,12 @@ export const francis0: Room[] = [
     status: 'occupied',
     moveIn: 'April',
     position: {
-      row: 1,
+      row: 2,
       col: 1,
       className: 'bg-blue-50'
     }
   },
+
   {
     roomNumber: 15,
     roomName: 'California',
@@ -38,7 +39,7 @@ export const francis0: Room[] = [
     status: 'available',
     moveIn: 'September',
     position: {
-      row: 1,
+      row: 2,
       col: 2,
       className: 'bg-green-50'
     }
@@ -51,7 +52,7 @@ export const francis0: Room[] = [
     moveIn: 'January',
     position: {
       row: 1,
-      col: 3
+      col: 8
     }
   },
   {
@@ -61,8 +62,8 @@ export const francis0: Room[] = [
     status: 'occupied',
     moveIn: 'July',
     position: {
-      row: 1,
-      col: 4
+      row: 2,
+      col: 8
     }
   },
 ];
@@ -75,10 +76,8 @@ export const francis1: Room[] = [
     status: "occupied",
     moveIn: "March",
     position: {
-      x: 'left-8',
-      y: 'top-8',
-      width: 'w-32',
-      height: 'h-24'
+      row: 2,
+      col: 4
     }
   },
   {
@@ -88,133 +87,125 @@ export const francis1: Room[] = [
     status: "occupied",
     moveIn: "November",
     position: {
-      x: 'right-8',
-      y: 'top-8',
-      width: 'w-32',
-      height: 'h-24'
+      row: 1,
+      col: 4
     }
   },
 ]
 
-export const francis2: Room[] = [
-  {
-    roomNumber: 9,
-    roomName: "Grand",
-    occupant: "",
-    status: "available",
-    moveIn: "June",
-    position: {
-      x: 'left-8',
-      y: 'top-8',
-      width: 'w-32',
-      height: 'h-24'
-    }
-  },
-  {
-    roomNumber: 8,
-    roomName: "Chicago",
-    occupant: "Val (Rob)",
-    status: "occupied",
-    moveIn: "August",
-    position: {
-      x: 'left-48',
-      y: 'top-8',
-      width: 'w-32',
-      height: 'h-24'
-    }
-  },
-  {
-    roomNumber: 7,
-    roomName: "Damen",
-    occupant: "Jaime He",
-    status: "occupied",
-    moveIn: "February",
-    position: {
-      x: 'left-48',
-      y: 'top-8',
-      width: 'w-32',
-      height: 'h-24'
-    }
-  },
-  {
-    roomNumber: 6,
-    roomName: "Medill",
-    occupant: "Cody Ran",
-    status: "occupied",
-    moveIn: "May",
-    position: {
-      x: 'left-48',
-      y: 'top-8',
-      width: 'w-32',
-      height: 'h-24'
-    }
-  },
-  {
-    roomNumber: 5,
-    roomName: "Pierce",
-    occupant: "",
-    status: "available",
-    moveIn: "October",
-    position: {
-      x: 'left-48',
-      y: 'top-8',
-      width: 'w-32',
-      height: 'h-24'
-    }
-  },
-  {
-    roomNumber: 4,
-    roomName: "Drake",
-    occupant: "Jamel Co",
-    status: "occupied",
-    moveIn: "December",
-    position: {
-      x: 'left-48',
-      y: 'top-8',
-      width: 'w-32',
-      height: 'h-24'
-    }
-  },
-  {
-    roomNumber: 3,
-    roomName: "Palmer",
-    occupant: "",
-    status: "available",
-    moveIn: "April",
-    position: {
-      x: 'left-48',
-      y: 'top-8',
-      width: 'w-32',
-      height: 'h-24'
-    }
-  },
-  {
-    roomNumber: 2,
-    roomName: "Rockwell",
-    occupant: "",
-    status: "available",
-    moveIn: "July",
-    position: {
-      x: 'left-48',
-      y: 'top-8',
-      width: 'w-32',
-      height: 'h-24'
-    }
-  },
-  {
-    roomNumber: 1,
-    roomName: "Fulton",
-    occupant: "",
-    status: "available",
-    moveIn: "March",
-    position: {
-      x: 'left-48',
-      y: 'top-8',
-      width: 'w-32',
-      height: 'h-24'
-    }
-  }
-]
+// export const francis2: Room[] = [
+//   {
+//     roomNumber: 9,
+//     roomName: "Grand",
+//     occupant: "",
+//     status: "available",
+//     moveIn: "June",
+//     position: {
+//       row: 1,
+//       col: 4
+//     }
+//   },
+//   {
+//     roomNumber: 8,
+//     roomName: "Chicago",
+//     occupant: "Val (Rob)",
+//     status: "occupied",
+//     moveIn: "August",
+//     position: {
+//       row: 1,
+//       col: 4
+//     }
+//   },
+//   {
+//     roomNumber: 7,
+//     roomName: "Damen",
+//     occupant: "Jaime He",
+//     status: "occupied",
+//     moveIn: "February",
+//     position: {
+//       row: 1,
+//       col: 4
+//     }
+//   },
+//   {
+//     roomNumber: 6,
+//     roomName: "Medill",
+//     occupant: "Cody Ran",
+//     status: "occupied",
+//     moveIn: "May",
+//     position: {
+//       x: 'left-48',
+//       y: 'top-8',
+//       width: 'w-32',
+//       height: 'h-24'
+//     }
+//   },
+//   {
+//     roomNumber: 5,
+//     roomName: "Pierce",
+//     occupant: "",
+//     status: "available",
+//     moveIn: "October",
+//     position: {
+//       x: 'left-48',
+//       y: 'top-8',
+//       width: 'w-32',
+//       height: 'h-24'
+//     }
+//   },
+//   {
+//     roomNumber: 4,
+//     roomName: "Drake",
+//     occupant: "Jamel Co",
+//     status: "occupied",
+//     moveIn: "December",
+//     position: {
+//       x: 'left-48',
+//       y: 'top-8',
+//       width: 'w-32',
+//       height: 'h-24'
+//     }
+//   },
+//   {
+//     roomNumber: 3,
+//     roomName: "Palmer",
+//     occupant: "",
+//     status: "available",
+//     moveIn: "April",
+//     position: {
+//       x: 'left-48',
+//       y: 'top-8',
+//       width: 'w-32',
+//       height: 'h-24'
+//     }
+//   },
+//   {
+//     roomNumber: 2,
+//     roomName: "Rockwell",
+//     occupant: "",
+//     status: "available",
+//     moveIn: "July",
+//     position: {
+//       x: 'left-48',
+//       y: 'top-8',
+//       width: 'w-32',
+//       height: 'h-24'
+//     }
+//   },
+//   {
+//     roomNumber: 1,
+//     roomName: "Fulton",
+//     occupant: "",
+//     status: "available",
+//     moveIn: "March",
+//     position: {
+//       x: 'left-48',
+//       y: 'top-8',
+//       width: 'w-32',
+//       height: 'h-24'
+//     }
+//   }
+// ]
 
 export const getStatusColor = (status: RoomStatus) => {
   switch (status) {
