@@ -32,13 +32,12 @@ const GridCard = ({ room }: GridCardProps) => {
   const row = room.position.row;
   return (
     <Card
-      className="h-full"
+      className="h-full "
       style={{
         gridColumn: `${column} / span ${colSpan}`,
         gridRow: `${row} / span ${rowSpan}`,
       }}
     >
-      <CardContent>
         <Drawer
           key={room.roomNumber}
           open={
@@ -65,7 +64,6 @@ const GridCard = ({ room }: GridCardProps) => {
             />
           )}
         </Drawer>
-      </CardContent>
     </Card>
   )
 }
