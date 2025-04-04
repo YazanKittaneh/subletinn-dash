@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Room, francis0, francis1 } from './map-data';
+import { Room, francis0, francis1 } from './types/map-data';
 import {
   StatusBadges,
   RestaurantLayout,
@@ -10,6 +10,9 @@ import {
 } from './map-components';
 import { Drawer, DrawerTrigger } from '@/components/ui/drawer';
 import GridLayout from './components/grid-layout';
+import { Example } from './components/example';
+import { Stripes } from './components/stripes';
+import { FrancisBasement, FrancisFirstFloor, FrancisSecondFloor } from './components/francis';
 
 export default function MapPOS() {
   const [selectedRoom, setSelectedRoom] = useState<Room | null>(null);
@@ -33,15 +36,13 @@ export default function MapPOS() {
 
       <StatusBadges />
       <div>
-        <RestaurantLayout>
 
-          {floors.map((floor, index) => (
-            <GridLayout key={index} rooms={floor}>
-            </GridLayout>
-          ))
 
-          }
-        </RestaurantLayout>
+        <FrancisBasement></FrancisBasement>
+        <FrancisFirstFloor></FrancisFirstFloor>
+        <FrancisSecondFloor></FrancisSecondFloor>
+
+
 
       </div>
     </div>

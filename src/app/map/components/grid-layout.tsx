@@ -1,7 +1,7 @@
 "use client"
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Room } from "../map-data"
+import { Room } from "../types/map-data"
 
 import {
   StatusBadges,
@@ -38,36 +38,56 @@ const GridCard = ({ room }: GridCardProps) => {
         gridRow: `${row} / span ${rowSpan}`,
       }}
     >
-        <Drawer
-          key={room.roomNumber}
-          open={
-            selectedRoom?.roomNumber === room.roomNumber && isDrawerOpen
-          }
-          onOpenChange={setIsDrawerOpen}
-        >
-          <DrawerTrigger asChild>
-            <RoomCard room={room} onClick={() => handleRoomClick(room)} />
-          </DrawerTrigger>
-          {selectedRoom && (
-            <RoomDetails
-              room={{
-                position: selectedRoom.position,
-                roomNumber: selectedRoom.roomNumber,
-                roomName: selectedRoom.roomName,
-                occupant: selectedRoom.occupant,
-                status: selectedRoom.status,
-                moveIn: selectedRoom.moveIn,
-                lastCleaned: selectedRoom.lastCleaned || undefined,
-                notes: selectedRoom.notes || undefined,
-              }}
-              onClose={() => setIsDrawerOpen(false)}
-            />
-          )}
-        </Drawer>
+      <Drawer
+        key={room.roomNumber}
+        open={
+          selectedRoom?.roomNumber === room.roomNumber && isDrawerOpen
+        }
+        onOpenChange={setIsDrawerOpen}
+      >
+        <DrawerTrigger asChild>
+          <RoomCard room={room} onClick={() => handleRoomClick(room)} />
+        </DrawerTrigger>
+        {selectedRoom && (
+          <RoomDetails
+            room={{
+              position: selectedRoom.position,
+              roomNumber: selectedRoom.roomNumber,
+              roomName: selectedRoom.roomName,
+              occupant: selectedRoom.occupant,
+              status: selectedRoom.status,
+              moveIn: selectedRoom.moveIn,
+              lastCleaned: selectedRoom.lastCleaned || undefined,
+              notes: selectedRoom.notes || undefined,
+            }}
+            onClose={() => setIsDrawerOpen(false)}
+          />
+        )}
+      </Drawer>
     </Card>
   )
 }
 
+// Component for a single card in the grid
+const BathroomCard = () => {
+  const colSpan = 2;
+  const rowSpan = 1;
+  const column = 7;
+  const row = 2;
+  return (
+    <Card
+      className="h-full w-full aspect-square" // Maintain square aspect ratio
+      style={{
+        gridColumn: `${column} / span ${colSpan}`,
+        gridRow: `${row} / span ${rowSpan}`,
+      }}
+    >
+      <div className="flex flex-col items-center">
+        <span className="text-xs text-gray-500">Bathroom</span>
+      </div>
+    </Card>
+  )
+}
 interface GridLayoutProps {
   rooms: Room[]
 }
@@ -77,20 +97,21 @@ export default function GridLayout({
   rooms,
 }: GridLayoutProps) {
 
+
   ///todo: should display community + floor
   return (
     <div className="container mx-auto py-8 px-4">
-      <h1 className="text-2xl font-bold mb-6">8×4 Grid Layout</h1> 
+      <h1 className="text-2xl font-bold mb-6">8×4 Grid Layout</h1>
 
       <div className="relative w-full pb-[25%]"> {/* 8:2 aspect ratio container */}
         <div
-          className="absolute inset-0 grid gap-2 sm:gap-4 border border-dashed border-gray-300 p-2 sm:p-4 rounded-lg"
+          className=" inset-0 grid border border-dashed border-gray-300 rounded-lg"
           style={{
             gridTemplateColumns: "repeat(8, 1fr)",
             gridTemplateRows: "repeat(2, 1fr)",
           }}
         >
-        {/* Grid lines for visualization
+          {/**** Grid lines for visualization ****
         {Array.from({ length: 7 }).map((_, i) => (
           <div
             key={`col-line-${i}`}
@@ -117,13 +138,14 @@ export default function GridLayout({
           />
         ))} */}
 
-        {/* Render the cards */}
-        {rooms.map((room, index) => (
-          <GridCard key={index} room={room} />
-        ))}
-      </div>
+          {/* Render the cards */}
+          {rooms.map((room, index) => (
+            <GridCard key={index} room={room} />
+          ))}
+          <BathroomCard></BathroomCard>
+        </div>
 
-      <div className="mt-8">
+        {/* <div className="mt-8">
         <h2 className="text-xl font-semibold mb-4">Grid Coordinates</h2>
         <div className="grid grid-cols-8 gap-1 sm:gap-2 mb-4">
           {Array.from({ length: 8 }).map((_, i) => (
@@ -141,6 +163,7 @@ export default function GridLayout({
             ))}
           </div>
         </div>
+      </div> */}
       </div>
     </div>
   )

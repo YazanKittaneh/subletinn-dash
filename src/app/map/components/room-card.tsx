@@ -1,6 +1,6 @@
 'use client';
 
-import { Room, getStatusColor } from '../map-data';
+import { Room, getStatusColor } from '../types/map-data';
 import { cn } from '@/lib/utils';
 import { Badge } from '@/components/ui/badge';
 

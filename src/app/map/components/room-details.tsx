@@ -1,6 +1,6 @@
 'use client';
 
-import { Room } from '../map-data';
+import { Room } from '../types/map-data';
 import { cn } from '@/lib/utils';
 import {
   DrawerContent,
