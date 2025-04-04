@@ -23,7 +23,7 @@ export default function MapPOS() {
   const floors = [francis0, francis1]
 
   return (
-    <div className="container mx-auto py-8">
+    <div className="container mx-auto py-4 sm:py-8 px-2 sm:px-4">
       <h1 className="text-3xl font-bold mb-2 dark:text-white">
         Room Management
       </h1>

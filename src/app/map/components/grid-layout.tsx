@@ -32,7 +32,7 @@ const GridCard = ({ room }: GridCardProps) => {
   const row = room.position.row;
   return (
     <Card
-      className="h-full "
+      className="h-full w-full aspect-square" // Maintain square aspect ratio
       style={{
         gridColumn: `${column} / span ${colSpan}`,
         gridRow: `${row} / span ${rowSpan}`,
@@ -82,13 +82,14 @@ export default function GridLayout({
     <div className="container mx-auto py-8 px-4">
       <h1 className="text-2xl font-bold mb-6">8×4 Grid Layout</h1> 
 
-      <div
-        className="grid gap-4 border border-dashed border-gray-300 p-4 rounded-lg"
-        style={{
-          gridTemplateColumns: "repeat(8, 1fr)",
-          gridTemplateRows: "repeat(2, minmax(120px, auto))",
-        }}
-      >
+      <div className="relative w-full pb-[25%]"> {/* 8:2 aspect ratio container */}
+        <div
+          className="absolute inset-0 grid gap-2 sm:gap-4 border border-dashed border-gray-300 p-2 sm:p-4 rounded-lg"
+          style={{
+            gridTemplateColumns: "repeat(8, 1fr)",
+            gridTemplateRows: "repeat(2, 1fr)",
+          }}
+        >
         {/* Grid lines for visualization
         {Array.from({ length: 7 }).map((_, i) => (
           <div
@@ -124,17 +125,17 @@ export default function GridLayout({
 
       <div className="mt-8">
         <h2 className="text-xl font-semibold mb-4">Grid Coordinates</h2>
-        <div className="grid grid-cols-8 gap-2 mb-4">
+        <div className="grid grid-cols-8 gap-1 sm:gap-2 mb-4">
           {Array.from({ length: 8 }).map((_, i) => (
-            <div key={i} className="bg-gray-100 p-2 text-center rounded">
-              Column {i + 1}
+            <div key={i} className="bg-gray-100 p-1 sm:p-2 text-center rounded text-xs sm:text-sm">
+              Col {i + 1}
             </div>
           ))}
         </div>
         <div className="flex">
-          <div className="flex flex-col gap-2 mr-4">
+          <div className="flex flex-col gap-1 sm:gap-2 mr-2 sm:mr-4">
             {Array.from({ length: 4 }).map((_, i) => (
-              <div key={i} className="bg-gray-100 p-2 text-center rounded h-10 flex items-center justify-center">
+              <div key={i} className="bg-gray-100 p-1 sm:p-2 text-center rounded h-8 sm:h-10 flex items-center justify-center text-xs sm:text-sm">
                 Row {i + 1}
               </div>
             ))}
