@@ -18,13 +18,13 @@ export function RoomCard({ room, onClick }: RoomCardProps) {
         'flex flex-col items-center justify-center',
         'rounded-lg aspect-[4/3]',
         'bg-white dark:bg-gray-800 shadow-md border border-gray-200 dark:border-gray-700',
-        'p-4'
+        'p-4',
       )}
       onClick={onClick}
     >
       <div
         className={cn(
-          'absolute top-2 right-2 w-4 h-4 rounded-full border-2 border-white',
+          'flex flex-col top-2 w-4 h-4 rounded-lg border-2 border-white',
           getStatusColor(room.status)
         )}
       ></div>
