@@ -12,7 +12,7 @@ import { Drawer, DrawerTrigger } from '@/components/ui/drawer';
 import GridLayout from './components/grid-layout';
 import { Example } from './components/example';
 import { Stripes } from './components/stripes';
-import { FrancisBasement, FrancisFirstFloor, FrancisSecondFloor } from './components/francis';
+import { Francis1, FrancisBasement, FrancisFirstFloor, FrancisSecondFloor } from './components/francis';
 
 export default function MapPOS() {
   const [selectedRoom, setSelectedRoom] = useState<Room | null>(null);
@@ -40,6 +40,7 @@ export default function MapPOS() {
 
         <FrancisBasement></FrancisBasement>
         <FrancisFirstFloor></FrancisFirstFloor>
+        <Francis1></Francis1>
         <FrancisSecondFloor></FrancisSecondFloor>
 
 
