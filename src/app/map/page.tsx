@@ -9,6 +9,7 @@ import {
   RoomDetails,
 } from './map-components';
 import { Drawer, DrawerTrigger } from '@/components/ui/drawer';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import GridLayout from './components/grid-layout';
 import { Example } from './components/example';
 import { Stripes } from './components/stripes';
