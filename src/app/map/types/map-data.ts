@@ -8,14 +8,18 @@ export interface RoomPosition {
 }
 
 export interface Room {
+  id: string
   roomNumber: number
   roomName: string
   occupant: string
   status: RoomStatus
+  building: string
+  floor: number
+  position: RoomPosition
+  moveIn: string
   lastCleaned?: string
   notes?: string
-  moveIn: string
-  position: RoomPosition
+  createdAt: string
 }
 
 export interface Amenity {
