@@ -13,7 +13,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import GridLayout from './components/grid-layout';
 import { Example } from './components/example';
 import { Stripes } from './components/stripes';
-import { Francis1, FrancisBasement, FrancisFirstFloor, FrancisSecondFloor } from './components/francis';
+import { FrancisFirstFloor, FrancisBasement, FrancisSecondFloor } from './components/francis';
 
 export default function MapPOS() {
   const [selectedRoom, setSelectedRoom] = useState<Room | null>(null);
@@ -35,16 +35,21 @@ export default function MapPOS() {
         Interactive room status system
       </p>
 
-      <StatusBadges />
       <div>
 
+      <StatusBadges className="mx-auto gap-2"></StatusBadges>
 
-        <FrancisBasement></FrancisBasement>
-        <FrancisFirstFloor></FrancisFirstFloor>
-        <Francis1></Francis1>
-        <FrancisSecondFloor></FrancisSecondFloor>
+        <Tabs defaultValue="basement" className="w-100%">
+          <TabsList className="mx-auto">
+            <TabsTrigger value="basement">Basement</TabsTrigger>
+            <TabsTrigger value="first">First</TabsTrigger>
+            <TabsTrigger value="second">Second</TabsTrigger>
+          </TabsList>
+          <TabsContent value="basement"><FrancisBasement></FrancisBasement></TabsContent>
+          <TabsContent value="first"> <FrancisFirstFloor></FrancisFirstFloor></TabsContent>
+          <TabsContent value="second"><FrancisSecondFloor></FrancisSecondFloor></TabsContent>
 
-
+        </Tabs>
 
       </div>
     </div>

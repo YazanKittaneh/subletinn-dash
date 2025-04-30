@@ -1,4 +1,5 @@
 export type RoomStatus = "available" | "occupied" | "maintenance"
+export type AmenityType = "bathroom" | "kitchen" | "livingroom"
 
 export interface RoomPosition {
   row: number  // 1-2
@@ -18,24 +19,26 @@ export interface Room {
 }
 
 export interface Amenity {
-  building: string,
-  floor: number,
-  status: string
-  lastCleaned?: string
-  notes?: string
+    type: AmenityType,
+    building: string,
+    floor: number,
+    status: string
+    lastCleaned?: string
+    notes?: string
 }
 
 
 
 export const FrancisAmenities: Amenity[] = [
   {
-    building: "Francis",
-    floor: 1,
-    status: 'cleaned',
-    lastCleaned: "Yesterday",
+    type: "kitchen",
+      building: "Francis",
+      floor: 1,
+      status: 'cleaned',
+      lastCleaned: "Yesterday"
   },
-
   {
+    type: "bathroom",
     building: "Francis",
     floor: 0,
     status: 'cleaned',
