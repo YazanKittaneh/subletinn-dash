@@ -4,6 +4,7 @@ import { francis0, francis1, francis2, FrancisAmenities } from "../types/map-dat
 import { Example } from "./example"
 import { BathroomSpace } from "./rooms/bathroom"
 import { EmptySpace } from "./rooms/empty-space"
+import { KitchenSpace } from "./rooms/kitchen-space"
 import { RoomSpace } from "./rooms/room-space"
 import { Stripes } from "./stripes"
 
@@ -15,17 +16,28 @@ export function FrancisBasement() {
                 <div className="grid grid-cols-1">
                     <Stripes border className="col-start-1 row-start-1 rounded-lg" />
                     {
-
-                        <div className="col-start-1 row-start-1 grid grid-cols-4 gap-4 rounded-lg text-center font-mono text-sm leading-6 font-bold text-white">
-                            <div className="rounded-lg bg-indigo-300 p-4 dark:bg-indigo-900">stairs</div>
-                            <EmptySpace ></EmptySpace>
-                            <EmptySpace></EmptySpace>
+                        <div className="col-start-1 row-start-1 grid grid-cols-3 gap-4 rounded-lg text-center font-mono text-sm leading-6 font-bold text-white">
                             <RoomSpace room={francis0[0]}></RoomSpace>
+                            <EmptySpace ></EmptySpace>
+                            <div className="rounded-lg bg-indigo-300 p-4 dark:bg-indigo-900">stairs</div>
+
                             <RoomSpace room={francis0[1]}></RoomSpace>
+                            <EmptySpace ></EmptySpace>
+                            <EmptySpace ></EmptySpace>
+
+                            <EmptySpace ></EmptySpace>
+                            <EmptySpace ></EmptySpace>
+                            <EmptySpace ></EmptySpace>
+
+                            <BathroomSpace></BathroomSpace>
+                            <EmptySpace ></EmptySpace>
+                            <EmptySpace ></EmptySpace>
+
                             <div className="col-span-3 grid grid-cols-subgrid gap-4">
                                 <RoomSpace room={francis0[2]}></RoomSpace>
-                                <BathroomSpace></BathroomSpace>
                                 <RoomSpace room={francis0[3]}></RoomSpace>
+                                <EmptySpace ></EmptySpace>
+
                             </div>
                         </div>
                     }
@@ -42,21 +54,53 @@ export function FrancisFirstFloor() {
                 <div className="grid grid-cols-1">
                     <Stripes border className="col-start-1 row-start-1 rounded-lg" />
                     {
-                        <div className="col-start-1 row-start-1 grid grid-cols-4 gap-4 rounded-lg text-center font-mono text-sm leading-6 font-bold text-white">
-                            <div className="rounded-lg bg-indigo-300 p-4 dark:bg-indigo-900">Living Room</div>
-                            <div className="col-span-3 grid grid-cols-subgrid gap-4">
-                                <EmptySpace></EmptySpace>
-                                <div className="rounded-lg bg-indigo-300 p-4 dark:bg-indigo-900">Kitchen</div>
-                                <RoomSpace room={francis1[1]}></RoomSpace>
-                                <EmptySpace></EmptySpace>
-                                <BathroomSpace></BathroomSpace>
-                                <RoomSpace room={francis1[0]}></RoomSpace>
+                        <div className="col-start-1 row-start-1 grid grid-cols-3 gap-4 rounded-lg text-center font-mono text-sm leading-6 font-bold text-white">
+                            <div className="col-span-3 row-span-3 grid grid-cols-subgrid gap-4">
+                                <div className="rounded-lg  bg-indigo-300 p-4 dark:bg-indigo-900  col-start-3 col-end-4 row-start-1 row-end-3">
+                                    <EmptySpace ></EmptySpace>
+                                    <p>
+                                        stairs
+                                    </p>
+                                    <EmptySpace ></EmptySpace>
+                                </div>
+                            </div>
+                            <div className="col-span-3 row-span-3 grid grid-cols-subgrid gap-4">
+                                <div className="rounded-lg  bg-indigo-300 p-4 dark:bg-indigo-900  col-start-3 col-end-4 row-start-1  ">
+                                    <EmptySpace ></EmptySpace>
+                                    <EmptySpace ></EmptySpace>
+                                    <p>
+                                        kitchen
+                                    </p>
+                                    <EmptySpace ></EmptySpace>
+                                    <EmptySpace ></EmptySpace>
+                                </div>
+
+                            </div>
+                            <div className="col-span-3 row-span-3 grid grid-cols-subgrid gap-4">
+                                <div className="rounded-lg  bg-indigo-300 p-4 dark:bg-indigo-900  col-start-1 col-end-1 ">
+                                    <EmptySpace ></EmptySpace>
+                                    <p>
+                                        Bathroom
+                                    </p>
+                                    <EmptySpace ></EmptySpace>
+                                </div>
+                                <div className="rounded-lg  bg-indigo-300 p-4 dark:bg-indigo-900  col-start-3 col-end-3 row-start-1 row-end-3">
+                                    <EmptySpace ></EmptySpace>
+                                    Pantry
+                                </div>
                             </div>
 
+
+                            <div className="col-span-3 grid grid-cols-subgrid gap-4">
+                                <RoomSpace room={francis1[0]}></RoomSpace>
+                                <EmptySpace ></EmptySpace>
+                                <RoomSpace room={francis1[1]}></RoomSpace>
+
+                            </div>
                         </div>
                     }
                 </div>
-            </Example >
+            </Example>
         </>
     )
 }
@@ -68,35 +112,31 @@ export function FrancisSecondFloor() {
                 <div className="grid grid-cols-1">
                     <Stripes border className="col-start-1 row-start-1 rounded-lg" />
                     {
-                        <div className="grid grid-cols-6 gap-4 sm:gap-0 rounded-lg text-center font-mono text-sm leading-6 font-bold text-white">
-                            <div className="rounded-lg bg-indigo-300 p-4 dark:bg-indigo-900">stairs</div>
-                            <EmptySpace></EmptySpace>
-                            <div className="col-span-4 grid grid-cols-subgrid gap-4">
+                        <div className="col-start-1 row-start-1 grid grid-cols-3 gap-4 rounded-lg text-center font-mono text-sm leading-6 font-bold text-white">
+                            <RoomSpace room={francis2[4]}></RoomSpace>
+                            <RoomSpace room={francis2[5]}></RoomSpace>
+                            <div className="rounded-lg bg-indigo-300 p-4 dark:bg-indigo-900 ">stairs</div>
 
-                                <RoomSpace room={francis2[6]}></RoomSpace>
-                                <RoomSpace room={francis2[7]}></RoomSpace>
-                                <RoomSpace room={francis2[8]}></RoomSpace>
+                            <RoomSpace room={francis2[3]}></RoomSpace>
+                            <EmptySpace ></EmptySpace>
+                            <EmptySpace ></EmptySpace>
 
-                            </div>
-
-                            <div className="row-start-2 col-span-4 grid grid-cols-subgrid gap-4">
-                                <RoomSpace room={francis2[5]}></RoomSpace>
-                                <EmptySpace></EmptySpace>
-                                <EmptySpace></EmptySpace>
-                                <EmptySpace></EmptySpace>
-                                <EmptySpace></EmptySpace>
+                            <RoomSpace room={francis2[2]}></RoomSpace>
+                            <EmptySpace ></EmptySpace>
+                            <RoomSpace room={francis2[6]}></RoomSpace>
 
 
-                            </div>
-                            <div className="row-start-3 col-span-8 min-sm:col-span-6 grid grid-cols-subgrid gap-4">
-                                <RoomSpace room={francis2[4]}></RoomSpace>
-                                <RoomSpace room={francis2[3]}></RoomSpace>
-                                <RoomSpace room={francis2[2]}></RoomSpace>
-                                <RoomSpace room={francis2[1]}></RoomSpace>
-                                <BathroomSpace></BathroomSpace>
-                                <RoomSpace room={francis2[0]}></RoomSpace>
+                            <RoomSpace room={francis2[1]}></RoomSpace>
+                            <EmptySpace ></EmptySpace>
+                            <RoomSpace room={francis2[7]}></RoomSpace>
 
-                            </div>
+                            <BathroomSpace></BathroomSpace>
+                            <EmptySpace ></EmptySpace>
+                            <RoomSpace room={francis2[8]}></RoomSpace>
+
+                            <RoomSpace room={francis2[0]}></RoomSpace>
+                            <EmptySpace ></EmptySpace>
+
 
                         </div>
                     }
@@ -105,3 +145,4 @@ export function FrancisSecondFloor() {
         </>
     )
 }
+

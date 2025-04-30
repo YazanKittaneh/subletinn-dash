@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { supabase } from '@/lib/supabase/client'; // Verify supabase import path
+import { supabase } from '@/lib/supabase'; // Verify supabase import path
 import { Room } from './types/map-data';
 import {
   StatusBadges,
@@ -59,21 +59,21 @@ export default function MapPOS() {
   };
 
   if (loading) {
-    return <div className="text-center p-8">Loading room data...</div>;
+    return <div className="p-8 text-center">Loading room data...</div>;
   }
 
   return (
-    <div className="container mx-auto py-4 sm:py-8 px-2 sm:px-4">
-      <h1 className="text-3xl font-bold mb-2 dark:text-white">
+    <div className="mx-auto px-2 sm:px-4 py-4 sm:py-8 container">
+      <h1 className="mb-2 font-bold dark:text-white text-3xl">
         Room Management
       </h1>
-      <p className="text-gray-500 dark:text-gray-400 mb-8">
+      <p className="mb-8 text-gray-500 dark:text-gray-400">
         Interactive room status system
       </p>
 
       <div>
 
-      <StatusBadges className="mx-auto gap-2"></StatusBadges>
+      <StatusBadges className="gap-2 mx-auto"></StatusBadges>
 
         <Tabs defaultValue="basement" className="w-100%">
           <TabsList className="mx-auto">
