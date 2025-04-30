@@ -81,9 +81,9 @@ export default function MapPOS() {
             <TabsTrigger value="first">First</TabsTrigger>
             <TabsTrigger value="second">Second</TabsTrigger>
           </TabsList>
-          <TabsContent value="basement"><FrancisBasement></FrancisBasement></TabsContent>
-          <TabsContent value="first"> <FrancisFirstFloor></FrancisFirstFloor></TabsContent>
-          <TabsContent value="second"><FrancisSecondFloor></FrancisSecondFloor></TabsContent>
+          <TabsContent value="basement"><FrancisBasement floorRooms={floors[0] || []} /></TabsContent>
+          <TabsContent value="first"><FrancisFirstFloor floorRooms={floors[1] || []} /></TabsContent>
+          <TabsContent value="second"><FrancisSecondFloor floorRooms={floors[2] || []} /></TabsContent>
 
         </Tabs>
 
