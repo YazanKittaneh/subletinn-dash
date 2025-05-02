@@ -24,9 +24,9 @@ export function RoomSpace({ room }: RoomSpaceProps) {
     return (
         <>
             <Drawer
-                key={room.roomNumber}
+                key={room.room_name}
                 open={
-                    selectedRoom?.roomNumber === room.roomNumber && isDrawerOpen
+                    selectedRoom?.room_number === room.room_number && isDrawerOpen
                 }
                 onOpenChange={setIsDrawerOpen}
             >

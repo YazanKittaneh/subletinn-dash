@@ -28,11 +28,11 @@ export function RoomCard({ room, onClick }: RoomCardProps) {
           getStatusColor(room.status)
         )}
       ></div>
-      <div className="text-lg font-bold dark:text-white">
-        Room {room.roomNumber}
+      <div className="font-bold dark:text-white text-lg">
+        Room {room.room_number}
       </div>
-      <div className="text-sm text-gray-600 dark:text-gray-400">
-        {room.roomName}
+      <div className="text-gray-600 dark:text-gray-400 text-sm">
+        {room.room_name}
       </div>
       {room.occupant && (
         <Badge variant="secondary" className="mt-2 text-xs">

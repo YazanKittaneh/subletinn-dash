@@ -32,16 +32,16 @@ const GridCard = ({ room }: GridCardProps) => {
   const row = room.position.row;
   return (
     <Card
-      className="h-full w-full aspect-square" // Maintain square aspect ratio
+      className="w-full h-full aspect-square" // Maintain square aspect ratio
       style={{
         gridColumn: `${column} / span ${colSpan}`,
         gridRow: `${row} / span ${rowSpan}`,
       }}
     >
       <Drawer
-        key={room.roomNumber}
+        key={room.room_number}
         open={
-          selectedRoom?.roomNumber === room.roomNumber && isDrawerOpen
+          selectedRoom?.room_number === room.room_number && isDrawerOpen
         }
         onOpenChange={setIsDrawerOpen}
       >
@@ -52,12 +52,12 @@ const GridCard = ({ room }: GridCardProps) => {
           <RoomDetails
             room={{
               position: selectedRoom.position,
-              roomNumber: selectedRoom.roomNumber,
-              roomName: selectedRoom.roomName,
+              room_number: selectedRoom.room_number,
+              room_name: selectedRoom.room_name,
               occupant: selectedRoom.occupant,
               status: selectedRoom.status,
-              moveIn: selectedRoom.moveIn,
-              lastCleaned: selectedRoom.lastCleaned || undefined,
+              move_in: selectedRoom.move_in,
+              last_cleaned: selectedRoom.last_cleaned || undefined,
               notes: selectedRoom.notes || undefined,
             }}
             onClose={() => setIsDrawerOpen(false)}
@@ -76,14 +76,14 @@ const BathroomCard = () => {
   const row = 2;
   return (
     <Card
-      className="h-full w-full aspect-square" // Maintain square aspect ratio
+      className="w-full h-full aspect-square" // Maintain square aspect ratio
       style={{
         gridColumn: `${column} / span ${colSpan}`,
         gridRow: `${row} / span ${rowSpan}`,
       }}
     >
       <div className="flex flex-col items-center">
-        <span className="text-xs text-gray-500">Bathroom</span>
+        <span className="text-gray-500 text-xs">Bathroom</span>
       </div>
     </Card>
   )
@@ -100,22 +100,22 @@ export default function GridLayout({
 
   ///todo: should display community + floor
   return (
-    <div className="container mx-auto py-8 px-4">
-      <h1 className="text-2xl font-bold mb-6">8×4 Grid Layout</h1>
+    <div className="mx-auto px-4 py-8 container">
+      <h1 className="mb-6 font-bold text-2xl">8×4 Grid Layout</h1>
 
-      <div className="relative w-full pb-[25%]"> {/* 8:2 aspect ratio container */}
+      <div className="relative pb-[25%] w-full"> {/* 8:2 aspect ratio container */}
         <div
-          className=" inset-0 grid border border-dashed border-gray-300 rounded-lg"
+          className="inset-0 grid border border-gray-300 border-dashed rounded-lg"
           style={{
-            gridTemplateColumns: "repeat(8, 1fr)",
-            gridTemplateRows: "repeat(2, 1fr)",
+            gridTemplateColumns: "repeat(2, 1fr)",
+            gridTemplateRows: "repeat(10, 1fr)",
           }}
         >
           {/**** Grid lines for visualization ****
         {Array.from({ length: 7 }).map((_, i) => (
           <div
             key={`col-line-${i}`}
-            className="absolute border-l border-gray-200"
+            className="absolute border-gray-200 border-l"
             style={{
               left: `calc(${(i + 1) * 12.5}% + ${i * 0.5 - 0.25}rem)`,
               top: 0,
@@ -128,7 +128,7 @@ export default function GridLayout({
         {Array.from({ length: 3 }).map((_, i) => (
           <div
             key={`row-line-${i}`}
-            className="absolute border-t border-gray-200"
+            className="absolute border-gray-200 border-t"
             style={{
               top: `calc(${(i + 1) * 25}%)`,
               left: 0,
@@ -146,10 +146,10 @@ export default function GridLayout({
         </div>
 
         {/* <div className="mt-8">
-        <h2 className="text-xl font-semibold mb-4">Grid Coordinates</h2>
-        <div className="grid grid-cols-8 gap-1 sm:gap-2 mb-4">
+        <h2 className="mb-4 font-semibold text-xl">Grid Coordinates</h2>
+        <div className="gap-1 sm:gap-2 grid grid-cols-8 mb-4">
           {Array.from({ length: 8 }).map((_, i) => (
-            <div key={i} className="bg-gray-100 p-1 sm:p-2 text-center rounded text-xs sm:text-sm">
+            <div key={i} className="bg-gray-100 p-1 sm:p-2 rounded text-xs sm:text-sm text-center">
               Col {i + 1}
             </div>
           ))}
@@ -157,7 +157,7 @@ export default function GridLayout({
         <div className="flex">
           <div className="flex flex-col gap-1 sm:gap-2 mr-2 sm:mr-4">
             {Array.from({ length: 4 }).map((_, i) => (
-              <div key={i} className="bg-gray-100 p-1 sm:p-2 text-center rounded h-8 sm:h-10 flex items-center justify-center text-xs sm:text-sm">
+              <div key={i} className="flex justify-center items-center bg-gray-100 p-1 sm:p-2 rounded h-8 sm:h-10 text-xs sm:text-sm text-center">
                 Row {i + 1}
               </div>
             ))}

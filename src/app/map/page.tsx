@@ -39,6 +39,7 @@ export default function MapPOS() {
           const floor = room.floor;
           acc[floor] = acc[floor] || [];
           acc[floor].push(room);
+          console.log("PAYLOAD:", acc);
           return acc;
         }, {});
 
