@@ -1,4 +1,4 @@
-export type RoomStatus = "available" | "occupied" | "maintenance"
+export type RoomStatus = "available" | "occupied" | "maintenance" | "ready" | "needs_clean"
 export type AmenityType = "bathroom" | "kitchen" | "livingroom"
 
 export interface RoomPosition {
@@ -236,6 +236,10 @@ export const getStatusColor = (status: RoomStatus) => {
       return "bg-rose-500"
     case "maintenance":
       return "bg-amber-500"
+    case "ready":
+      return "bg-blue-500"
+    case "needs_clean":
+      return "bg-purple-500"
     default:
       return "bg-slate-500"
   }

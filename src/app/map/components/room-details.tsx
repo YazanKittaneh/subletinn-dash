@@ -44,7 +44,11 @@ export function RoomDetails({ room, onClose }: RoomDetailsProps) {
                     ? 'text-red-600'
                     : room.status === 'maintenance'
                       ? 'text-blue-600'
-                      : 'text-yellow-600'
+                      : room.status === 'ready'
+                        ? 'text-blue-600'
+                        : room.status === 'needs_clean'
+                          ? 'text-purple-600'
+                          : 'text-yellow-600'
               )}
             >
               {room.status}
@@ -99,6 +103,18 @@ export function RoomDetails({ room, onClose }: RoomDetailsProps) {
           {room.status === 'maintenance' && (
             <p className="text-orange-500 text-sm">Needs attention.</p>
           )}
+
+          {room.status === 'ready' && (
+            <p className="text-blue-500 text-sm">
+              Ready for occupancy.
+            </p>
+          )}
+
+          {room.status === 'needs_clean' && (
+            <p className="text-purple-500 text-sm">
+              Requires cleaning.
+            </p>
+          )}
         </div>
         <DrawerFooter>
           {room.status === 'available' && (
@@ -115,6 +131,8 @@ export function RoomDetails({ room, onClose }: RoomDetailsProps) {
           )}
           {room.status === 'occupied' && <Button>Check In</Button>}
           {room.status === 'maintenance' && <Button>Mark as Available</Button>}
+          {room.status === 'ready' && <Button>Mark as Occupied</Button>}
+          {room.status === 'needs_clean' && <Button>Mark as Ready</Button>}
           <DrawerClose asChild>
             <Button variant="outline" onClick={onClose}>
               Close

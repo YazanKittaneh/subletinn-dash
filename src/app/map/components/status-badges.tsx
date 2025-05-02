@@ -22,6 +22,14 @@ export function StatusBadges({ className }: StatusBadgesProps) {
         <div className="w-3 h-3 rounded-full bg-amber-500"></div>
         Maintenance
       </Badge>
+      <Badge variant="outline" className="flex items-center gap-2 px-3 py-1 dark:bg-gray-800 dark:text-gray-200">
+        <div className="w-3 h-3 rounded-full bg-blue-500"></div>
+        Ready
+      </Badge>
+      <Badge variant="outline" className="flex items-center gap-2 px-3 py-1 dark:bg-gray-800 dark:text-gray-200">
+        <div className="w-3 h-3 rounded-full bg-purple-500"></div>
+        Needs Clean
+      </Badge>
     </div>
   )
 }
