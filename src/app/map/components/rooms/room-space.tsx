@@ -37,13 +37,17 @@ export function RoomSpace({ room }: RoomSpaceProps) {
                     <RoomDetails
                         room={{
                             position: selectedRoom.position,
-                            roomNumber: selectedRoom.roomNumber,
+                            room_number: selectedRoom.room_number,
                             room_name: selectedRoom.room_name,
                             occupant: selectedRoom.occupant,
                             status: selectedRoom.status,
-                            moveIn: selectedRoom.moveIn,
-                            lastCleaned: selectedRoom.lastCleaned || undefined,
+                            move_in: selectedRoom.move_in,
+                            last_cleaned: selectedRoom.last_cleaned || undefined,
                             notes: selectedRoom.notes || undefined,
+                            building: selectedRoom.building,
+                            floor: selectedRoom.floor,
+                            id: selectedRoom.id,
+                            created_at: selectedRoom.created_at
                         }}
                         onClose={() => setIsDrawerOpen(false)}
                     />

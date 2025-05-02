@@ -24,10 +24,10 @@ export function RoomDetails({ room, onClose }: RoomDetailsProps) {
       <div className="mx-auto w-full max-w-sm">
         <DrawerHeader>
           <DrawerTitle className="dark:text-white">
-            Room {room.roomNumber}
+            Room {room.room_number}
           </DrawerTitle>
           <DrawerDescription>
-            {room.roomName} • Status:{' '}
+            {room.room_name} • Status:{' '}
             <Badge
               variant="outline"
               className={cn(
@@ -41,7 +41,7 @@ export function RoomDetails({ room, onClose }: RoomDetailsProps) {
                       : 'text-yellow-600'
               )}
             >
-              {room.roomName}
+              {room.room_name}
             </Badge>
           </DrawerDescription>
         </DrawerHeader>
@@ -50,7 +50,7 @@ export function RoomDetails({ room, onClose }: RoomDetailsProps) {
             <>
               <div className="mb-4">
                 <p className="text-gray-500 text-sm">
-                  Occupied since: {room.moveIn}
+                  Occupied since: {room.move_in}
                 </p>
               </div>
 
