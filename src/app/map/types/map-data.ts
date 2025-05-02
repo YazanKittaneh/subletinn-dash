@@ -53,11 +53,11 @@ export const FrancisAmenities: Amenity[] = [
 
 export const francis0: Room[] = [
   {
-    roomNumber: 16,
+    room_number: 16,
     room_name: 'Sawyer',
     occupant: 'Juan San',
     status: 'occupied',
-    moveIn: 'April',
+    move_in: 'April',
     position: {
       row: 2,
       col: 1,
@@ -66,11 +66,11 @@ export const francis0: Room[] = [
   },
 
   {
-    roomNumber: 15,
+    room_number: 15,
     room_name: 'California',
     occupant: '',
     status: 'available',
-    moveIn: 'September',
+    move_in: 'September',
     position: {
       row: 2,
       col: 2,
@@ -78,22 +78,22 @@ export const francis0: Room[] = [
     }
   },
   {
-    roomNumber: 14,
+    room_number: 14,
     room_name: 'Point',
     occupant: 'FERRAN',
     status: 'occupied',
-    moveIn: 'January',
+    move_in: 'January',
     position: {
       row: 1,
       col: 8
     }
   },
   {
-    roomNumber: 13,
+    room_number: 13,
     room_name: 'Clark',
     occupant: 'Henry Me',
     status: 'occupied',
-    moveIn: 'July',
+    move_in: 'July',
     position: {
       row: 2,
       col: 8
@@ -103,22 +103,22 @@ export const francis0: Room[] = [
 
 export const francis1: Room[] = [
   {
-    roomNumber: 11,
+    room_number: 11,
     room_name: "Michigan",
     occupant: "Lu Wang",
     status: "occupied",
-    moveIn: "March",
+    move_in: "March",
     position: {
       row: 2,
       col: 4
     }
   },
   {
-    roomNumber: 10,
+    room_number: 10,
     room_name: "Cortez",
     occupant: "Kyriakos",
     status: "occupied",
-    moveIn: "November",
+    move_in: "November",
     position: {
       row: 1,
       col: 4
@@ -128,99 +128,99 @@ export const francis1: Room[] = [
 
 export const francis2: Room[] = [
   {
-    roomNumber: 9,
+    room_number: 9,
     room_name: "Grand",
     occupant: "",
     status: "available",
-    moveIn: "June",
+    move_in: "June",
     position: {
       row: 1,
       col: 4
     }
   },
   {
-    roomNumber: 8,
+    room_number: 8,
     room_name: "Chicago",
     occupant: "Val (Rob)",
     status: "occupied",
-    moveIn: "August",
+    move_in: "August",
     position: {
       row: 1,
       col: 4
     }
   },
   {
-    roomNumber: 7,
+    room_number: 7,
     room_name: "Damen",
     occupant: "Jaime He",
     status: "occupied",
-    moveIn: "February",
+    move_in: "February",
     position: {
       row: 1,
       col: 4
     }
   },
   {
-    roomNumber: 6,
+    room_number: 6,
     room_name: "Medill",
     occupant: "Cody Ran",
     status: "occupied",
-    moveIn: "May",
+    move_in: "May",
     position: {
       row: 1,
       col: 4
     }
   },
   {
-    roomNumber: 5,
+    room_number: 5,
     room_name: "Pierce",
     occupant: "",
     status: "available",
-    moveIn: "October",
+    move_in: "October",
     position: {
       row: 1,
       col: 4
     }
   },
   {
-    roomNumber: 4,
+    room_number: 4,
     room_name: "Drake",
     occupant: "Jamel Co",
     status: "occupied",
-    moveIn: "December",
+    move_in: "December",
     position: {
       row: 1,
       col: 4
     }
   },
   {
-    roomNumber: 3,
+    room_number: 3,
     room_name: "Palmer",
     occupant: "",
     status: "available",
-    moveIn: "April",
+    move_in: "April",
     position: {
       row: 1,
       col: 4
     }
   },
   {
-    roomNumber: 2,
+    room_number: 2,
     room_name: "Rockwell",
     occupant: "",
     status: "available",
-    moveIn: "July",
+    move_in: "July",
     position: {
       row: 1,
       col: 4
     }
   },
   {
-    roomNumber: 1,
+    room_number: 1,
     room_name: "Fulton",
     occupant: "",
     status: "available",
-    moveIn: "March",
+    move_in: "March",
     position: {
       row: 1,
       col: 4
