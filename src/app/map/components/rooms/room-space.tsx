@@ -38,7 +38,7 @@ export function RoomSpace({ room }: RoomSpaceProps) {
                         room={{
                             position: selectedRoom.position,
                             roomNumber: selectedRoom.roomNumber,
-                            roomName: selectedRoom.roomName,
+                            room_name: selectedRoom.room_name,
                             occupant: selectedRoom.occupant,
                             status: selectedRoom.status,
                             moveIn: selectedRoom.moveIn,

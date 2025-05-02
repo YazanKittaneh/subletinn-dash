@@ -41,7 +41,7 @@ export function RoomDetails({ room, onClose }: RoomDetailsProps) {
                       : 'text-yellow-600'
               )}
             >
-              {room.status}
+              {room.roomName}
             </Badge>
           </DrawerDescription>
         </DrawerHeader>
@@ -49,21 +49,21 @@ export function RoomDetails({ room, onClose }: RoomDetailsProps) {
           {room.status === 'occupied' && (
             <>
               <div className="mb-4">
-                <p className="text-sm text-gray-500">
+                <p className="text-gray-500 text-sm">
                   Occupied since: {room.moveIn}
                 </p>
               </div>
 
-              <h3 className="font-medium mb-2">Orders</h3>
+              <h3 className="mb-2 font-medium">Orders</h3>
               {/* {room.orders && room.orders.length > 0 ? (
                 <div className="space-y-2">
                   {room.orders.map((order) => (
-                    <Card key={order.id} className="p-3 dark:bg-gray-800">
+                    <Card key={order.id} className="dark:bg-gray-800 p-3">
                       <div className="flex justify-between">
                         <span className="dark:text-white">{order.item}</span>
                         <span className="dark:text-white">${order.price.toFixed(2)}</span>
                       </div>
-                      <div className="text-xs text-gray-500">Status: {order.status}</div>
+                      <div className="text-gray-500 text-xs">Status: {order.status}</div>
                     </Card>
                   ))}
                   <Separator className="my-2" />
@@ -73,25 +73,25 @@ export function RoomDetails({ room, onClose }: RoomDetailsProps) {
                   </div>
                 </div>
               ) : (
-                <p className="text-sm text-gray-500">No orders yet</p>
+                <p className="text-gray-500 text-sm">No orders yet</p>
               )} */}
             </>
           )}
 
           {room.status === 'available' && (
-            <p className="text-sm text-gray-500">
+            <p className="text-gray-500 text-sm">
               This room is ready to be seated.
             </p>
           )}
 
           {room.status === 'occupied' && (
-            <p className="text-sm text-gray-500">
+            <p className="text-gray-500 text-sm">
               This room has been reserved.
             </p>
           )}
 
           {room.status === 'maintenance' && (
-            <p className="text-sm text-gray-500">This room is being cleaned.</p>
+            <p className="text-gray-500 text-sm">This room is being cleaned.</p>
           )}
         </div>
         <DrawerFooter>

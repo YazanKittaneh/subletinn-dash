@@ -25,11 +25,11 @@ export function FrancisBasement({ floorRooms }: FrancisFloorProps) {
       <Example>
         <div className="grid grid-cols-1">
           <Stripes border className="col-start-1 row-start-1 rounded-lg" />
-          <div className="col-start-1 row-start-1 grid grid-cols-3 gap-4 rounded-lg text-center font-mono text-sm leading-6 font-bold text-white">
+          <div className="gap-4 grid grid-cols-3 col-start-1 row-start-1 rounded-lg font-mono font-bold text-white text-sm text-center leading-6">
             {/* Row 1 */}
             {getRoom(2, 1) ? <RoomSpace room={getRoom(2, 1)!} /> : <EmptySpace />}
             <EmptySpace />
-            <div className="rounded-lg bg-indigo-300 p-4 dark:bg-indigo-900">stairs</div>
+            <div className="bg-indigo-300 dark:bg-indigo-900 p-4 rounded-lg">stairs</div>
 
             {/* Row 2 */}
             {getRoom(2, 2) ? <RoomSpace room={getRoom(2, 2)!} /> : <EmptySpace />}
@@ -47,7 +47,7 @@ export function FrancisBasement({ floorRooms }: FrancisFloorProps) {
             <EmptySpace />
 
             {/* Bottom Section */}
-            <div className="col-span-3 grid grid-cols-subgrid gap-4">
+            <div className="gap-4 grid grid-cols-subgrid col-span-3">
               {getRoom(1, 8) ? <RoomSpace room={getRoom(1, 8)!} /> : <EmptySpace />}
               {getRoom(2, 8) ? <RoomSpace room={getRoom(2, 8)!} /> : <EmptySpace />}
               <EmptySpace />
@@ -71,9 +71,9 @@ export function FrancisFirstFloor({ floorRooms }: FrancisFloorProps) {
       <Example>
         <div className="grid grid-cols-1">
           <Stripes border className="col-start-1 row-start-1 rounded-lg" />
-          <div className="col-start-1 row-start-1 grid grid-cols-3 gap-4 rounded-lg text-center font-mono text-sm leading-6 font-bold text-white">
-            <div className="col-span-3 row-span-3 grid grid-cols-subgrid gap-4">
-              <div className="rounded-lg  bg-indigo-300 p-4 dark:bg-indigo-900  col-start-3 col-end-4 row-start-1 row-end-3">
+          <div className="gap-4 grid grid-cols-3 col-start-1 row-start-1 rounded-lg font-mono font-bold text-white text-sm text-center leading-6">
+            <div className="gap-4 grid grid-cols-subgrid col-span-3 row-span-3">
+              <div className="col-start-3 col-end-4 row-start-1 row-end-3 bg-indigo-300 dark:bg-indigo-900 p-4 rounded-lg">
                 <EmptySpace />
                 <p>
                   stairs
@@ -81,8 +81,8 @@ export function FrancisFirstFloor({ floorRooms }: FrancisFloorProps) {
                 <EmptySpace />
               </div>
             </div>
-            <div className="col-span-3 row-span-3 grid grid-cols-subgrid gap-4">
-              <div className="rounded-lg  bg-indigo-300 p-4 dark:bg-indigo-900  col-start-3 col-end-4 row-start-1  ">
+            <div className="gap-4 grid grid-cols-subgrid col-span-3 row-span-3">
+              <div className="col-start-3 col-end-4 row-start-1 bg-indigo-300 dark:bg-indigo-900 p-4 rounded-lg">
                 <EmptySpace />
                 <EmptySpace />
                 <p>
@@ -92,21 +92,21 @@ export function FrancisFirstFloor({ floorRooms }: FrancisFloorProps) {
                 <EmptySpace />
               </div>
             </div>
-            <div className="col-span-3 row-span-3 grid grid-cols-subgrid gap-4">
-              <div className="rounded-lg  bg-indigo-300 p-4 dark:bg-indigo-900  col-start-1 col-end-1 ">
+            <div className="gap-4 grid grid-cols-subgrid col-span-3 row-span-3">
+              <div className="col-start-1 col-end-1 bg-indigo-300 dark:bg-indigo-900 p-4 rounded-lg">
                 <EmptySpace />
                 <p>
                   Bathroom
                 </p>
                 <EmptySpace />
               </div>
-              <div className="rounded-lg  bg-indigo-300 p-4 dark:bg-indigo-900  col-start-3 col-end-3 row-start-1 row-end-3">
+              <div className="col-start-3 col-end-3 row-start-1 row-end-3 bg-indigo-300 dark:bg-indigo-900 p-4 rounded-lg">
                 <EmptySpace />
                 Pantry
               </div>
             </div>
 
-            <div className="col-span-3 grid grid-cols-subgrid gap-4">
+            <div className="gap-4 grid grid-cols-subgrid col-span-3">
               {getRoom(2, 4) ? <RoomSpace room={getRoom(2, 4)!} /> : <EmptySpace />}
               <EmptySpace />
               {getRoom(1, 4) ? <RoomSpace room={getRoom(1, 4)!} /> : <EmptySpace />}
@@ -130,11 +130,11 @@ export function FrancisSecondFloor({ floorRooms }: FrancisFloorProps) {
       <Example>
         <div className="grid grid-cols-1">
           <Stripes border className="col-start-1 row-start-1 rounded-lg" />
-          <div className="col-start-1 row-start-1 grid grid-cols-3 gap-4 rounded-lg text-center font-mono text-sm leading-6 font-bold text-white">
+          <div className="gap-4 grid grid-cols-3 col-start-1 row-start-1 rounded-lg font-mono font-bold text-white text-sm text-center leading-6">
             {/* Top row */}
             {getRoom(1, 1) ? <RoomSpace room={getRoom(1, 1)!} /> : <EmptySpace />}
             {getRoom(1, 2) ? <RoomSpace room={getRoom(1, 2)!} /> : <EmptySpace />}
-            <div className="rounded-lg bg-indigo-300 p-4 dark:bg-indigo-900">stairs</div>
+            <div className="bg-indigo-300 dark:bg-indigo-900 p-4 rounded-lg">stairs</div>
 
             {/* Second row */}
             {getRoom(1, 3) ? <RoomSpace room={getRoom(1, 3)!} /> : <EmptySpace />}

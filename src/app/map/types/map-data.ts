@@ -8,18 +8,14 @@ export interface RoomPosition {
 }
 
 export interface Room {
-  id: string
   roomNumber: number
-  roomName: string
+  room_name: string
   occupant: string
   status: RoomStatus
-  building: string
-  floor: number
-  position: RoomPosition
-  moveIn: string
   lastCleaned?: string
   notes?: string
-  createdAt: string
+  moveIn: string
+  position: RoomPosition
 }
 
 export interface Amenity {
@@ -54,7 +50,7 @@ export const FrancisAmenities: Amenity[] = [
 export const francis0: Room[] = [
   {
     roomNumber: 16,
-    roomName: 'Sawyer',
+    room_name: 'Sawyer',
     occupant: 'Juan San',
     status: 'occupied',
     moveIn: 'April',
@@ -67,7 +63,7 @@ export const francis0: Room[] = [
 
   {
     roomNumber: 15,
-    roomName: 'California',
+    room_name: 'California',
     occupant: '',
     status: 'available',
     moveIn: 'September',
@@ -79,7 +75,7 @@ export const francis0: Room[] = [
   },
   {
     roomNumber: 14,
-    roomName: 'Point',
+    room_name: 'Point',
     occupant: 'FERRAN',
     status: 'occupied',
     moveIn: 'January',
@@ -90,7 +86,7 @@ export const francis0: Room[] = [
   },
   {
     roomNumber: 13,
-    roomName: 'Clark',
+    room_name: 'Clark',
     occupant: 'Henry Me',
     status: 'occupied',
     moveIn: 'July',
@@ -104,7 +100,7 @@ export const francis0: Room[] = [
 export const francis1: Room[] = [
   {
     roomNumber: 11,
-    roomName: "Michigan",
+    room_name: "Michigan",
     occupant: "Lu Wang",
     status: "occupied",
     moveIn: "March",
@@ -115,7 +111,7 @@ export const francis1: Room[] = [
   },
   {
     roomNumber: 10,
-    roomName: "Cortez",
+    room_name: "Cortez",
     occupant: "Kyriakos",
     status: "occupied",
     moveIn: "November",
@@ -129,7 +125,7 @@ export const francis1: Room[] = [
 export const francis2: Room[] = [
   {
     roomNumber: 9,
-    roomName: "Grand",
+    room_name: "Grand",
     occupant: "",
     status: "available",
     moveIn: "June",
@@ -140,7 +136,7 @@ export const francis2: Room[] = [
   },
   {
     roomNumber: 8,
-    roomName: "Chicago",
+    room_name: "Chicago",
     occupant: "Val (Rob)",
     status: "occupied",
     moveIn: "August",
@@ -151,7 +147,7 @@ export const francis2: Room[] = [
   },
   {
     roomNumber: 7,
-    roomName: "Damen",
+    room_name: "Damen",
     occupant: "Jaime He",
     status: "occupied",
     moveIn: "February",
@@ -162,7 +158,7 @@ export const francis2: Room[] = [
   },
   {
     roomNumber: 6,
-    roomName: "Medill",
+    room_name: "Medill",
     occupant: "Cody Ran",
     status: "occupied",
     moveIn: "May",
@@ -173,7 +169,7 @@ export const francis2: Room[] = [
   },
   {
     roomNumber: 5,
-    roomName: "Pierce",
+    room_name: "Pierce",
     occupant: "",
     status: "available",
     moveIn: "October",
@@ -184,7 +180,7 @@ export const francis2: Room[] = [
   },
   {
     roomNumber: 4,
-    roomName: "Drake",
+    room_name: "Drake",
     occupant: "Jamel Co",
     status: "occupied",
     moveIn: "December",
@@ -195,7 +191,7 @@ export const francis2: Room[] = [
   },
   {
     roomNumber: 3,
-    roomName: "Palmer",
+    room_name: "Palmer",
     occupant: "",
     status: "available",
     moveIn: "April",
@@ -206,7 +202,7 @@ export const francis2: Room[] = [
   },
   {
     roomNumber: 2,
-    roomName: "Rockwell",
+    room_name: "Rockwell",
     occupant: "",
     status: "available",
     moveIn: "July",
@@ -217,7 +213,7 @@ export const francis2: Room[] = [
   },
   {
     roomNumber: 1,
-    roomName: "Fulton",
+    room_name: "Fulton",
     occupant: "",
     status: "available",
     moveIn: "March",
