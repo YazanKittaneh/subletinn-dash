@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { Room } from '../types/map-data';
 import { cn } from '@/lib/utils';
 import {
@@ -12,18 +13,52 @@ import {
 } from '@/components/ui/drawer';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { Calendar } from '@/components/ui/calendar';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogFooter,
+} from '@/components/ui/dialog';
+import { format } from 'date-fns';
 
 interface RoomDetailsProps {
   room: Room;
   onClose: () => void;
 }
 
-//function should display a popup that allows the user to select a date from a shadcn calender picker. Send date to supabase
-function setMoveInDate(): Date{
-  return new Date;
-}
-
 export function RoomDetails({ room, onClose }: RoomDetailsProps) {
+  const [isCalendarOpen, setIsCalendarOpen] = useState(false);
+  const [selectedDate, setSelectedDate] = useState<Date | undefined>(new Date());
+
+  const handleMoveInDateSelect = async () => {
+    if (!selectedDate) return;
+    
+    try {
+      // Format date for display
+      const formattedDate = format(selectedDate, 'MMMM dd, yyyy');
+      
+      // TODO: Send to Supabase
+      // const { data, error } = await supabase
+      //   .from('rooms')
+      //   .update({ 
+      //     status: 'occupied', 
+      //     move_in: selectedDate.toISOString() 
+      //   })
+      //   .eq('room_number', room.room_number)
+      //   .select();
+      
+      // if (error) throw error;
+      
+      console.log(`Room ${room.room_number} marked as occupied with move-in date: ${formattedDate}`);
+      setIsCalendarOpen(false);
+      // You might want to refresh the room data or close the drawer here
+    } catch (error) {
+      console.error('Error updating move-in date:', error);
+    }
+  };
 
   return (
     <DrawerContent className="dark:bg-gray-900">
@@ -119,7 +154,7 @@ export function RoomDetails({ room, onClose }: RoomDetailsProps) {
         <DrawerFooter>
           {room.status === 'available' && (
             <>
-              <Button onClick={setMoveInDate}>Mark Move-in</Button>
+              <Button onClick={() => setIsCalendarOpen(true)}>Mark Move-in</Button>
               <Button>Needs Maintenance</Button>
             </>
           )}
@@ -140,6 +175,34 @@ export function RoomDetails({ room, onClose }: RoomDetailsProps) {
           </DrawerClose>
         </DrawerFooter>
       </div>
+
+      {/* Move-in Date Calendar Dialog */}
+      <Dialog open={isCalendarOpen} onOpenChange={setIsCalendarOpen}>
+        <DialogContent className="sm:max-w-[425px]">
+          <DialogHeader>
+            <DialogTitle>Select Move-in Date</DialogTitle>
+            <DialogDescription>
+              Choose the date when the guest will move in to Room {room.room_number}.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="py-4 flex justify-center">
+            <Calendar
+              mode="single"
+              selected={selectedDate}
+              onSelect={setSelectedDate}
+              className="rounded-md border"
+            />
+          </div>
+          <DialogFooter>
+            <Button variant="outline" onClick={() => setIsCalendarOpen(false)}>
+              Cancel
+            </Button>
+            <Button onClick={handleMoveInDateSelect}>
+              Confirm Move-in
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </DrawerContent>
   );
 }
